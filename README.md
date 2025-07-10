@@ -33,4 +33,69 @@ Upload your **resume** and a **job description**, and the AI Copilot will:
 
 ---
 
-##
+## 📦 Installation
+
+```bash
+git clone https://github.com/yourusername/ai-resume-copilot.git
+cd ai-resume-copilot
+pip install -r requirements.txt
+streamlit run app/main.py
+```
+
+---
+
+## 📁 Project Structure
+
+```
+ai-resume-copilot/
+├── app/               # Streamlit UI
+│   └── main.py
+├── rag/               # RAG and agent logic
+│   ├── retriever.py
+│   └── prompt_templates.py
+├── data/              # Sample resumes and job descriptions
+├── tests/             # Unit tests
+├── assets/            # Screenshots, diagrams
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ✅ Features
+
+- 📄 PDF/DOCX upload for resumes and job descriptions
+- 🔎 Semantic similarity matching with FAISS
+- 🤖 Conversational Q&A agent
+- ✍️ Auto-suggestions for resume bullet points
+- 📊 ATS keyword alignment score *(coming soon)*
+
+---
+
+## 💡 Future Improvements
+
+- Resume rewriting tool with LLM
+- Multi-resume comparison
+- Auto-generated cover letters
+- LinkedIn JD scraping
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.  
+If you find this useful, consider ⭐ starring the repo!
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 📬 Contact
+
+📧 Sohan Puthran  
+🌐 [Portfolio Website](https://sohansputhran.github.io)  
+🔗 [LinkedIn](https://www.linkedin.com/in/sohan-puthran/)
