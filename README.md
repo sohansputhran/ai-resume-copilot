@@ -4,6 +4,15 @@
 
 ---
 
+<!-- ## 📛 Badges
+
+![Build Status](https://img.shields.io/github/actions/workflow/status/sohansputhran/ai-resume-copilot/main.yml)
+![License](https://img.shields.io/github/license/sohansputhran/ai-resume-copilot)
+![Python Version](https://img.shields.io/badge/python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/built%20with-Streamlit-ff4b4b) 
+
+---    -->
+
 ## 🔍 What it Does
 
 Upload your **resume** and a **job description**, and the AI Copilot will:
@@ -30,6 +39,12 @@ Upload your **resume** and a **job description**, and the AI Copilot will:
 
 📺 Coming soon: [Watch demo](#)  
 <!-- 🌐 Try it live: [Streamlit Share](#) *(optional)* -->
+
+---
+
+## 🧭 Architecture Diagram
+
+![Architecture Diagram](assets/architecture_diagram.png)
 
 ---
 
