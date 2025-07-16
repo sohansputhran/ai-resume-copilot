@@ -1,6 +1,6 @@
 # 🧠 AI Resume Copilot
 
-**AI Resume Copilot** is a smart assistant that analyzes your resume and a target job description using **Retrieval-Augmented Generation (RAG)** to provide actionable feedback, tailored suggestions, and skills alignment insights. It leverages **LangChain**, **FAISS**, and open-source **LLMs** to help you fine-tune your resume for maximum impact.
+**AI Resume Copilot** is a local AI-powered assistant that analyzes your resume and a job description using **open-source LLMs (like Mistral-7B)** and **Retrieval-Augmented Generation (RAG)** to offer tailored improvement suggestions. It helps you fine-tune your resume for maximum alignment with any job — all processed locally with privacy in mind.
 
 ---
 
@@ -13,13 +13,18 @@
 
 ---    -->
 
-## 🔍 What it Does
+## 🔍 What It Does
 
-Upload your **resume** and a **job description**, and the AI Copilot will:
-- ✅ Identify key matching skills and gaps
-- 💬 Answer questions like: “How well does my resume match this job?”
-- 🛠 Suggest improvements and bullet points
-- 🧠 Use a RAG pipeline for accurate, context-aware insights
+Upload your **resume (PDF)** and a **job description (PDF)**. The app will automatically:
+- ✅ Extract key skills from both documents
+- 🧠 Identify missing skills in the resume compared to the job description
+- 💬 Perform end-to-end analysis using structured LLM prompts:
+  - Initial job requirement extraction
+  - Resume skill summary
+  - Gap analysis and optimization
+  - Suggestions to rewrite Professional Summary, Experience, and Skills
+  - Final clarity and impact review
+- 🛠 Generate personalized improvement tips in natural language
 
 ---
 
@@ -27,10 +32,10 @@ Upload your **resume** and a **job description**, and the AI Copilot will:
 
 | Tool | Purpose |
 |------|---------|
-| [LangChain](https://www.langchain.com/) | Orchestrates the RAG pipeline and agents |
-| [FAISS](https://github.com/facebookresearch/faiss) | Semantic search and vector storage |
-| [Streamlit](https://streamlit.io/) | Fast, interactive frontend |
-| [Open-source LLM](https://huggingface.co/models) | Natural language understanding and generation |
+| [LangChain](https://www.langchain.com/) | RAG pipeline (retriever + semantic chunking) |
+| [FAISS](https://github.com/facebookresearch/faiss) | Fast semantic search over resume + JD |
+| [Streamlit](https://streamlit.io/) | Interactive web UI |
+| [HuggingFace Transformers](https://huggingface.co/models) | Loads open-source LLMs like Mistral |
 | Python 3.11 | Core backend logic |
 
 ---
@@ -51,11 +56,13 @@ Upload your **resume** and a **job description**, and the AI Copilot will:
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/ai-resume-copilot.git
+git clone https://github.com/sohansputhran/ai-resume-copilot.git
 cd ai-resume-copilot
 pip install -r requirements.txt
 streamlit run app/main.py
 ```
+
+> ⚠️ Make sure you have GPU and enough VRAM (~6GB+) to load Mistral-7B locally.
 
 ---
 
@@ -63,15 +70,16 @@ streamlit run app/main.py
 
 ```
 ai-resume-copilot/
-├── app/               # Streamlit UI
+├── app/                        # Streamlit UI
 │   └── main.py
-├── rag/               # RAG and agent logic
-│   ├── retriever.py
-│   └── prompt_templates.py
-├── data/              # Sample resumes and job descriptions
-├── tests/             # Unit tests
-├── assets/            # Screenshots, diagrams
+├── rag/                        # RAG and agent logic
+│   ├── llm_local.py            # Mistral LLM pipeline using HuggingFace
+│   ├── prompt_templates.py
+│   └── retriever.py            # FAISS + LangChain retriever
+├── data/                       # Sample resumes and job descriptions
+├── assets/                     # Screenshots, diagrams
 ├── requirements.txt
+├── utils.py                    # PDF extraction, skill extraction, etc.
 └── README.md
 ```
 
@@ -79,20 +87,23 @@ ai-resume-copilot/
 
 ## ✅ Features
 
-- 📄 PDF/DOCX upload for resumes and job descriptions
-- 🔎 Semantic similarity matching with FAISS
-- 🤖 Conversational Q&A agent
-- ✍️ Auto-suggestions for resume bullet points
-- 📊 ATS keyword alignment score *(coming soon)*
+- 📄 Resume & JD PDF upload
+- 🧠 Open-source LLM-powered recommendations
+- 🔍 Resume-vs-JD gap detection
+- ✍️ Suggestions to rewrite resume sections
+- 🎯 Missing skill identification (natural language)
+- 🧑‍💻 All inference runs locally with no external API
 
 ---
 
-## 💡 Future Improvements
+## 💡 Future Enhancements
 
-- Resume rewriting tool with LLM
-- Multi-resume comparison
-- Auto-generated cover letters
-- LinkedIn JD scraping
+- [ ] ATS keyword alignment score
+- [ ] Resume section-by-section auto-editing
+- [ ] Download suggestions as PDF or `.txt`
+- [ ] Job title & company name extraction
+- [ ] UI tabs for step-by-step insights
+- [ ] Multi-resume comparison mode
 
 ---
 
