@@ -1,6 +1,6 @@
 import streamlit as st
-from llm_local import generate_response
-from retriever import create_vectorstore, semantic_search
+from rag.llm_local import generate_response
+from rag.retriever import create_vectorstore, semantic_search
 from utils import extract_text_from_pdf, extract_skills
 
 st.set_page_config(page_title="AI Resume Copilot", layout="wide")
