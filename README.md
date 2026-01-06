@@ -1,6 +1,6 @@
 # 🧠 AI Resume Copilot
 
-**AI Resume Copilot** is a local AI-powered assistant that analyzes your resume and a job description using **open-source LLMs (like Mistral-7B)** and **Retrieval-Augmented Generation (RAG)** to offer tailored improvement suggestions. It helps you fine-tune your resume for maximum alignment with any job — all processed locally with privacy in mind.
+**AI Resume Copilot** is a local AI-powered assistant that analyzes your resume and a job description using **open-source LLMs (like Mistral-7B)** and **Retrieval-Augmented Generation (RAG)** to offer tailored improvement suggestions. It helps you fine-tune your resume for maximum alignment with any job, all processed locally with privacy in mind.
 
 ---
 
